@@ -1,4 +1,4 @@
-// Generated from HelloWorld.g4 by ANTLR 4.7.2
+// Generated from HelloWorld.g4 by ANTLR 4.10.1
 package compiler;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -11,13 +11,13 @@ import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class HelloWorldLexer extends Lexer {
-	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, ID=2, WS=3;
+		T__0=1, NUMBER=2, STRINGNUMBER=3, ID=4, WS=5;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -28,7 +28,7 @@ public class HelloWorldLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"T__0", "ID", "WS"
+			"T__0", "NUMBER", "STRINGNUMBER", "ID", "WS"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -41,7 +41,7 @@ public class HelloWorldLexer extends Lexer {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, "ID", "WS"
+			null, null, "NUMBER", "STRINGNUMBER", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -103,15 +103,36 @@ public class HelloWorldLexer extends Lexer {
 	public ATN getATN() { return _ATN; }
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\5\33\b\1\4\2\t\2"+
-		"\4\3\t\3\4\4\t\4\3\2\3\2\3\2\3\2\3\2\3\2\3\3\6\3\21\n\3\r\3\16\3\22\3"+
-		"\4\6\4\26\n\4\r\4\16\4\27\3\4\3\4\2\2\5\3\3\5\4\7\5\3\2\4\3\2c|\5\2\13"+
-		"\f\17\17\"\"\2\34\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\3\t\3\2\2\2\5\20"+
-		"\3\2\2\2\7\25\3\2\2\2\t\n\7J\2\2\n\13\7g\2\2\13\f\7n\2\2\f\r\7n\2\2\r"+
-		"\16\7q\2\2\16\4\3\2\2\2\17\21\t\2\2\2\20\17\3\2\2\2\21\22\3\2\2\2\22\20"+
-		"\3\2\2\2\22\23\3\2\2\2\23\6\3\2\2\2\24\26\t\3\2\2\25\24\3\2\2\2\26\27"+
-		"\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\31\3\2\2\2\31\32\b\4\2\2\32\b"+
-		"\3\2\2\2\5\2\22\27\3\b\2\2";
+		"\u0004\u0000\u0005\'\u0006\uffff\uffff\u0002\u0000\u0007\u0000\u0002\u0001"+
+		"\u0007\u0001\u0002\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004"+
+		"\u0007\u0004\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0001\u0001\u0004\u0001\u0013\b\u0001\u000b\u0001\f\u0001"+
+		"\u0014\u0001\u0002\u0004\u0002\u0018\b\u0002\u000b\u0002\f\u0002\u0019"+
+		"\u0001\u0003\u0004\u0003\u001d\b\u0003\u000b\u0003\f\u0003\u001e\u0001"+
+		"\u0004\u0004\u0004\"\b\u0004\u000b\u0004\f\u0004#\u0001\u0004\u0001\u0004"+
+		"\u0000\u0000\u0005\u0001\u0001\u0003\u0002\u0005\u0003\u0007\u0004\t\u0005"+
+		"\u0001\u0000\u0004\u0001\u000009\u0003\u000009AZaz\u0002\u0000AZaz\u0003"+
+		"\u0000\t\n\r\r  *\u0000\u0001\u0001\u0000\u0000\u0000\u0000\u0003\u0001"+
+		"\u0000\u0000\u0000\u0000\u0005\u0001\u0000\u0000\u0000\u0000\u0007\u0001"+
+		"\u0000\u0000\u0000\u0000\t\u0001\u0000\u0000\u0000\u0001\u000b\u0001\u0000"+
+		"\u0000\u0000\u0003\u0012\u0001\u0000\u0000\u0000\u0005\u0017\u0001\u0000"+
+		"\u0000\u0000\u0007\u001c\u0001\u0000\u0000\u0000\t!\u0001\u0000\u0000"+
+		"\u0000\u000b\f\u0005H\u0000\u0000\f\r\u0005e\u0000\u0000\r\u000e\u0005"+
+		"l\u0000\u0000\u000e\u000f\u0005l\u0000\u0000\u000f\u0010\u0005o\u0000"+
+		"\u0000\u0010\u0002\u0001\u0000\u0000\u0000\u0011\u0013\u0007\u0000\u0000"+
+		"\u0000\u0012\u0011\u0001\u0000\u0000\u0000\u0013\u0014\u0001\u0000\u0000"+
+		"\u0000\u0014\u0012\u0001\u0000\u0000\u0000\u0014\u0015\u0001\u0000\u0000"+
+		"\u0000\u0015\u0004\u0001\u0000\u0000\u0000\u0016\u0018\u0007\u0001\u0000"+
+		"\u0000\u0017\u0016\u0001\u0000\u0000\u0000\u0018\u0019\u0001\u0000\u0000"+
+		"\u0000\u0019\u0017\u0001\u0000\u0000\u0000\u0019\u001a\u0001\u0000\u0000"+
+		"\u0000\u001a\u0006\u0001\u0000\u0000\u0000\u001b\u001d\u0007\u0002\u0000"+
+		"\u0000\u001c\u001b\u0001\u0000\u0000\u0000\u001d\u001e\u0001\u0000\u0000"+
+		"\u0000\u001e\u001c\u0001\u0000\u0000\u0000\u001e\u001f\u0001\u0000\u0000"+
+		"\u0000\u001f\b\u0001\u0000\u0000\u0000 \"\u0007\u0003\u0000\u0000! \u0001"+
+		"\u0000\u0000\u0000\"#\u0001\u0000\u0000\u0000#!\u0001\u0000\u0000\u0000"+
+		"#$\u0001\u0000\u0000\u0000$%\u0001\u0000\u0000\u0000%&\u0006\u0004\u0000"+
+		"\u0000&\n\u0001\u0000\u0000\u0000\u0005\u0000\u0014\u0019\u001e#\u0001"+
+		"\u0006\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.tree.*;
 
 public class HelloWorldMain {
 
+	//antlr HelloWorld.g4 -o compiler -package compiler
 	public static void main(String[] args) throws Exception {
 		// create input stream
 		CharStream input = CharStreams.fromFileName(args[0]);

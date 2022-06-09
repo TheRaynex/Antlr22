@@ -1,4 +1,4 @@
-// Generated from HelloWorld.g4 by ANTLR 4.7.2
+// Generated from HelloWorld.g4 by ANTLR 4.10.1
 package compiler;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -17,4 +17,14 @@ public interface HelloWorldListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitGreeting(HelloWorldParser.GreetingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link HelloWorldParser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifier(HelloWorldParser.IdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link HelloWorldParser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifier(HelloWorldParser.IdentifierContext ctx);
 }

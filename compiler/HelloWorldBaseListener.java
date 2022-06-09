@@ -1,4 +1,4 @@
-// Generated from HelloWorld.g4 by ANTLR 4.7.2
+// Generated from HelloWorld.g4 by ANTLR 4.10.1
 package compiler;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -23,6 +23,18 @@ public class HelloWorldBaseListener implements HelloWorldListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitGreeting(HelloWorldParser.GreetingContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIdentifier(HelloWorldParser.IdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIdentifier(HelloWorldParser.IdentifierContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -1,4 +1,4 @@
-// Generated from HelloWorld.g4 by ANTLR 4.7.2
+// Generated from HelloWorld.g4 by ANTLR 4.10.1
 package compiler;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,18 +11,18 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class HelloWorldParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, ID=2, WS=3;
+		T__0=1, NUMBER=2, STRINGNUMBER=3, ID=4, WS=5;
 	public static final int
-		RULE_greeting = 0;
+		RULE_greeting = 0, RULE_identifier = 1;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"greeting"
+			"greeting", "identifier"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -35,7 +35,7 @@ public class HelloWorldParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, "ID", "WS"
+			null, null, "NUMBER", "STRINGNUMBER", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -90,7 +90,9 @@ public class HelloWorldParser extends Parser {
 	}
 
 	public static class GreetingContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(HelloWorldParser.ID, 0); }
+		public IdentifierContext identifier() {
+			return getRuleContext(IdentifierContext.class,0);
+		}
 		public GreetingContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -111,10 +113,47 @@ public class HelloWorldParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2);
+			setState(4);
 			match(T__0);
-			setState(3);
-			match(ID);
+			setState(5);
+			identifier();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IdentifierContext extends ParserRuleContext {
+		public TerminalNode STRINGNUMBER() { return getToken(HelloWorldParser.STRINGNUMBER, 0); }
+		public IdentifierContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_identifier; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof HelloWorldListener ) ((HelloWorldListener)listener).enterIdentifier(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof HelloWorldListener ) ((HelloWorldListener)listener).exitIdentifier(this);
+		}
+	}
+
+	public final IdentifierContext identifier() throws RecognitionException {
+		IdentifierContext _localctx = new IdentifierContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_identifier);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(7);
+			match(STRINGNUMBER);
 			}
 		}
 		catch (RecognitionException re) {
@@ -129,9 +168,13 @@ public class HelloWorldParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\5\b\4\2\t\2\3\2\3"+
-		"\2\3\2\3\2\2\2\3\2\2\2\2\6\2\4\3\2\2\2\4\5\7\3\2\2\5\6\7\4\2\2\6\3\3\2"+
-		"\2\2\2";
+		"\u0004\u0001\u0005\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
+		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
+		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
+		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0005\u0001\u0000"+
+		"\u0000\u0005\u0006\u0003\u0002\u0001\u0000\u0006\u0001\u0001\u0000\u0000"+
+		"\u0000\u0007\b\u0005\u0003\u0000\u0000\b\u0003\u0001\u0000\u0000\u0000"+
+		"\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
